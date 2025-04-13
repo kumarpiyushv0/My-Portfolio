@@ -1,0 +1,369 @@
+/* ===== Base Reset & Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 100px; /* Adjust based on your sticky header height */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: 	#e5decf;
+  color: #151515;
+  line-height: 1.6;
+  
+}
+
+/* ===== Sticky Header ===== */
+header {
+  display:flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  padding: 1.5rem 2rem;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeInDown 1s ease-in-out;
+}
+.name a{
+  text-decoration: none;
+  color:#000000;
+}
+header h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+/* ===== Navigation ===== */
+nav {
+  margin-top: 0.6rem;
+  
+}
+
+nav a {
+  margin: 0 1rem;
+  font-size: 2rem;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.home__social{
+  margin-top: 0.8rem;
+  
+}
+.home__social a{
+  font-size: 2rem;
+  padding: 5px;
+  flex-direction:column;
+  color:#000000
+}
+.home__social a:hover{
+  color: rgb(2, 103, 219);
+  text-decoration:solid;
+}
+.name a:hover{
+  background: linear-gradient(to right, #392de1, #00c7e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration:solid;
+}
+nav a:hover{
+  color:  rgb(2, 103, 219);
+  text-decoration:solid;
+}
+
+.intro{
+  display:flex
+}
+
+/* ===== Section Base Styles ===== */
+section {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+  animation-delay: 0.3s;
+}
+
+/* ===== Photo Section ===== */
+.photo {
+  text-align: center;
+}
+
+.profile-photo {
+  width: 250px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  display: block;
+  margin: 1rem auto 2rem;
+  transition: transform 0.3s ease;
+  
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+}
+
+/* ===== About Section ===== */
+.about h3 {
+  font-weight: normal;
+  color: #222222;
+  margin-top: 1rem;
+}
+
+/* ===== Projects Section ===== */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.project {
+  background: #e6e1dc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.project h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: #222;
+}
+
+.project p {
+  font-size: 1rem;
+  color: #555;
+}
+
+
+.project_photo {
+  text-align: center;
+}
+
+.project__photo {
+  height:100%;
+  width:100%;
+  object-fit:contain;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  display: block;
+  margin: 1rem auto 2rem;
+  transition: transform 0.3s ease;
+}
+
+.project__photo:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Contact Form ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: fadeInUp 1s ease-in-out;
+  
+}
+
+input, textarea {
+  padding: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #e6e1dc;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #ffffff;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  padding: 0.9rem;
+  background: #3e87f4;
+  color: #e6e1dc;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  color: #3e87f4;
+  background: #cbc5c5;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+}
+
+.home__social_footer{
+  margin-top: 0.8rem;
+  
+}
+.home__social_footer a{
+  font-size: 2rem;
+  padding: 5px;
+  flex-direction:column;
+  color:#ffffff
+}
+.home__social_footer a:hover{
+  color: rgb(2, 103, 219);
+  text-decoration:solid;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 600px) {
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .profile-photo {
+    width: 140px;
+    height: 140px;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 300px; /* Adjust based on your sticky header height */
+    scroll-behavior: smooth;
+  }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  nav {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  nav a {
+    display: block;
+    font-size: 1rem;
+  }
+
+  .intro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home__social {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .home__social a {
+    font-size: 1.5rem;
+    padding: 0.4rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  section {
+    padding: 1.5rem 1rem;
+  }
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project {
+    background: #e6e1dc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  }
+
+  input,
+  textarea,
+  button {
+    font-size: 0.95rem;
+    padding: 0.7rem;
+  }
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="logo2.png" />
+  <title>Piyush Kumar</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+  
+  <header>
+    <h1 class="name"><a href="">Piyush Kumar</a></h1>
+    <nav aria-label="Main Navigation">
+      <a href="#">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="home__social">
+      <a href="https://www.linkedin.com/in/piyush-kumar-3b8a222b8" ><i class='bx bxl-linkedin'></i></a>
+      <a href="https://github.com/kumarpiyushv0" ><i class='bx bxl-github' ></i></a>
+      <a href="https://x.com/impk1103"><i class='bx bxl-twitter' ></i></a>
+  </div>
+  </header>
+
+  
+  <div class="intro">
+    <section id="photo" class="photo">
+      <img src="about2.jpg" alt="Piyush Kumar" class="profile-photo" />
+    </section>
+  
+    
+    <section id="about" class="about">
+      <h2>About Me</h2>
+      <h3>Hello! I'm a web developer with a passion for building beautiful and functional websites. I specialize in full-stack development using HTML, CSS, React, and JavaScript, and I love bringing ideas to life in the browser.</h3>
+    </section>
+  </div>
+
+ 
+  <section id="projects" class="projects">
+    <h2>Projects</h2><br>
+    <div class="project">
+      <h3> Movie rating and progress tracker </h3>
+      <section id="photo" class="project_photo">
+        <a href="https://use-popcorn-delta-jade.vercel.app/"></i><img src="image.png" alt="Piyush Kumar" class="project__photo" /></a>
+      </section>
+      <p>Designed and developed a full-stack web application for tracking watched movies, calculating average ratings, and providing    
+        real-time analytics on user watch time.<br>
+           • Tools Used: ReactJs, MongoDb, NodeJs, Github.</p>
+    </div>
+    <div class="project">
+      <h3>  Traveling items tracker & todo list </h3>
+      <section id="photo" class="project_photo">
+        <a href="https://travel-list-orpin-phi.vercel.app/"></i><img src="image2.png" alt="Piyush Kumar" class="project__photo" /></a>
+      </section>
+      <p>Built a responsive and interactive to-do list web application to help users efficiently track travel essentials. Integrated React 
+        hooks for state management. Implemented CRUD operations..<br>
+           • Tools Used: ReactJs, MongoDb, NodeJs, Github.</p>
+    </div>
+    <div class="project">
+      <h3> The Car Dealership </h3>
+      <section id="photo" class="project_photo">
+        <a href="https://the-car-dealership-eadx.onrender.com/"></i><img src="image3.png" alt="Piyush Kumar" class="project__photo" /></a>
+      </section>
+      <p>Designed and developed a full-stack web application which takes the local dealerships to online platform for better oppurtunities.<br>
+           • Tools Used: EJS, CSS, Express, MongoDb, NodeJs, Github.</p>
+    </div>
+    <div class="project">
+      <h3> Weather API Integration </h3>
+      <section id="photo" class="project_photo">
+        <a href="https://kumarpiyushv0.github.io/livetimer/"></i><img src="image4.png" alt="Piyush Kumar" class="project__photo" /></a>
+      </section>
+      <p>Engineered a lightweight weather tracking web application that integrates real-time API calls to fetch and display current 
+        weather  conditions based on geolocation-based user input. Deployed on AWS EC2 with NGINX for high availability and 
+        optimized load times.<br>
+        • Tech Stack: HTML, Vanilla CSS, NGINX.<br>
+        • Hosting: Deployed on an AWS EC2 (Ubuntu) instance using NGINX and integrated Git version control.</p>
+    </div>
+  </section>
+
+  
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" rows="5" placeholder="Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p id="responseMessage" style="margin-top: 10px;"></p>
+  </section>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const name = e.target.name.value.trim();
+      const email = e.target.email.value.trim();
+      const message = e.target.message.value.trim();
+      const responseEl = document.getElementById("responseMessage");
+
+      if (!name || !email || !message) {
+        responseEl.textContent = "Please fill out all fields.";
+        responseEl.style.color = "red";
+        return;
+      }
+
+      try {
+        const response = await fetch("http://localhost:8000/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, message }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          responseEl.textContent = result.message;
+          responseEl.style.color = "green";
+          e.target.reset();
+        } else {
+          responseEl.textContent = result.error || "Failed to send message.";
+          responseEl.style.color = "red";
+        }
+      } catch (err) {
+        console.error("Error:", err);
+        responseEl.textContent = "An error occurred. Please try again.";
+        responseEl.style.color = "red";
+      }
+    });
+  </script>
+
+ 
+  <footer>
+    <p>© 2025 Piyush Kumar. All rights reserved.</p>
+    <div class="home__social_footer">
+      <a href="https://www.linkedin.com/in/piyush-kumar-3b8a222b8" ><i class='bx bxl-linkedin'></i></a>
+      <a href="https://github.com/kumarpiyushv0" ><i class='bx bxl-github' ></i></a>
+      <a href="https://x.com/impk1103"><i class='bx bxl-twitter' ></i></a>
+  </div>
+  </footer>
+
+  <script>
+    fetch("http://localhost:8000/send", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    name: "Piyush",
+    email: "piyush@example.com",
+    message: "Hello, this is a test!",
+  }),
+});
+  </script>
+</body>
+</html>
+
+
