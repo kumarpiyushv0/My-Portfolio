@@ -264,51 +264,31 @@ footer {
 }
 
 /* ===== Responsive Design ===== */
-@media (max-width: 600px) {
-  nav a {
-    display: block;
-    margin: 0.5rem 0;
-  }
-
-  header h1 {
-    font-size: 2rem;
-  }
-
-  .profile-photo {
-    width: 140px;
-    height: 140px;
-  }
-
-  section {
-    padding: 2rem 1rem;
-  }
-}
-
-
-
-
-
-
 
 @media (max-width: 768px) {
   html {
-    scroll-padding-top: 300px; /* Adjust based on your sticky header height */
+    scroll-padding-top: 150px; /* Adjust based on your sticky header height */
     scroll-behavior: smooth;
   }
   header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
+    display:flex;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+    justify-content: space-evenly;
   }
 
   nav {
-    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0.2rem;
     width: 100%;
   }
 
   nav a {
     display: block;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .intro {
@@ -319,14 +299,13 @@ footer {
 
   .home__social {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    flex-direction: row;
+    gap: 1rem;
   }
 
   .home__social a {
     font-size: 1.5rem;
-    padding: 0.4rem;
+    padding: 0.2px;
   }
 
   header h1 {
