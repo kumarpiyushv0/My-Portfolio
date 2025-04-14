@@ -44,7 +44,7 @@
 }
 
 html {
-  scroll-padding-top: 200px; /* Adjust based on your sticky header height */
+  scroll-padding-top: 150px; /* Adjust based on your sticky header height */
   scroll-behavior: smooth;
 }
 
@@ -76,19 +76,18 @@ header {
   color:#ffcc00;
 }
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   letter-spacing: 1px;
 }
 
 /* ===== Navigation ===== */
 nav {
   margin-top: 0.6rem;
-  
 }
 
 nav a {
   margin: 0 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #ffcc00;
   text-decoration: none;
   font-weight: 500;
@@ -342,7 +341,7 @@ footer {
 
 @media (max-width: 768px) {
   html {
-    scroll-padding-top: 200px; /* Adjust based on your sticky header height */
+    scroll-padding-top: 170px; /* Adjust based on your sticky header height */
     scroll-behavior: smooth;
   }
   header {
