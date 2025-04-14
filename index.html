@@ -9,10 +9,14 @@
   <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-
+  <div id="intro">
+    <h1>Piyush Kumar<span class="blinking-dot1">.</span><span class="blinking-dot2">.</span><span class="blinking-dot3">.</span></h1>
+  </div>
   
+  
+  <div id="main-content" style="display: none;">
   <header>
-    <h1 class="name"><a href="">Piyush Kumar</a></h1>
+    <h1 class="name"><a href="">▄ Piyush Kumar ▄</a></h1>
     <nav aria-label="Main Navigation">
       <a href="#">About</a>
       <a href="#projects">Projects</a>
@@ -42,36 +46,40 @@
   <section id="projects" class="projects">
     <h2>Projects</h2><br>
     <div class="project">
-      <h3> Movie rating and progress tracker </h3>
+      
       <section id="photo" class="project_photo">
         <a href="https://use-popcorn-delta-jade.vercel.app/"></i><img src="image.png" alt="Piyush Kumar" class="project__photo" /></a>
       </section>
+      <h3> Movie rating and progress tracker </h3>
       <p>Designed and developed a full-stack web application for tracking watched movies, calculating average ratings, and providing    
         real-time analytics on user watch time.<br>
            • Tools Used: ReactJs, MongoDb, NodeJs, Github.</p>
     </div>
     <div class="project">
-      <h3>  Traveling items tracker & todo list </h3>
+      
       <section id="photo" class="project_photo">
         <a href="https://travel-list-orpin-phi.vercel.app/"></i><img src="image2.png" alt="Piyush Kumar" class="project__photo" /></a>
       </section>
+      <h3>  Traveling items tracker & todo list </h3>
       <p>Built a responsive and interactive to-do list web application to help users efficiently track travel essentials. Integrated React 
         hooks for state management. Implemented CRUD operations..<br>
            • Tools Used: ReactJs, MongoDb, NodeJs, Github.</p>
     </div>
     <div class="project">
-      <h3> The Car Dealership </h3>
+     
       <section id="photo" class="project_photo">
         <a href="https://the-car-dealership-eadx.onrender.com/"></i><img src="image3.png" alt="Piyush Kumar" class="project__photo" /></a>
       </section>
+      <h3> The Car Dealership </h3>
       <p>Designed and developed a full-stack web application which takes the local dealerships to online platform for better oppurtunities.<br>
            • Tools Used: EJS, CSS, Express, MongoDb, NodeJs, Github.</p>
     </div>
     <div class="project">
-      <h3> Weather API Integration </h3>
+      
       <section id="photo" class="project_photo">
         <a href="https://kumarpiyushv0.github.io/livetimer/"></i><img src="image4.png" alt="Piyush Kumar" class="project__photo" /></a>
       </section>
+      <h3> Weather API Integration </h3>
       <p>Engineered a lightweight weather tracking web application that integrates real-time API calls to fetch and display current 
         weather  conditions based on geolocation-based user input. Deployed on AWS EC2 with NGINX for high availability and 
         optimized load times.<br>
@@ -93,6 +101,19 @@
   </section>
 
   <script>
+    window.addEventListener('load', () => {
+    setTimeout(() => {
+      const intro = document.getElementById('intro');
+      intro.style.opacity = '0';
+      setTimeout(() => {
+        intro.style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      }, 1000); // match the transition duration
+    }, 2000); // how long the intro shows (in ms)
+  });
+
+
+
     document.getElementById("contactForm").addEventListener("submit", async function (e) {
       e.preventDefault();
 
@@ -153,6 +174,7 @@
   }),
 });
   </script>
+  </div>
 </body>
 </html>
 

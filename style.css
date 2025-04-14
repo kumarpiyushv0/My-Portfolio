@@ -1,8 +1,45 @@
 /* ===== Base Reset & Global Styles ===== */
+#intro {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("background.png");
+  color: #ffcc00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+
+.blinking-dot1 {
+  color: rgb(255, 0, 0); /* green dot, change as you like */
+  animation: blink 0.5s steps(3) infinite;
+  margin-left: 5px;
+}
+
+.blinking-dot2 {
+  color: #0f0; /* green dot, change as you like */
+  animation: blink 0.5s steps(2) infinite;
+  margin-left: 5px;
+}
+.blinking-dot3{
+  color: #ffcc00 ; /* green dot, change as you like */
+  animation: blink 0.5s steps(1) infinite;
+  margin-left: 5px;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+::selection {
+  background-color: #2f2f2fac; /* light orange */
+  color: #ffcc00;              /* selected text color */
 }
 
 html {
@@ -11,9 +48,9 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: 	#e5decf;
-  color: #151515;
+  font-family: 'Courier New', monospace;
+  background-image: url("background.png");
+  color: #ffcc00;
   line-height: 1.6;
   
 }
@@ -25,9 +62,9 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(80, 80, 80, 0.3);
   backdrop-filter: blur(8px);
-  color: #fff;
+  color: #ffcc00;
   padding: 1.5rem 2rem;
   text-align: left;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -35,7 +72,7 @@ header {
 }
 .name a{
   text-decoration: none;
-  color:#000000;
+  color:#ffcc00;
 }
 header h1 {
   font-size: 2.5rem;
@@ -51,7 +88,7 @@ nav {
 nav a {
   margin: 0 1rem;
   font-size: 2rem;
-  color: #000000;
+  color: #ffcc00;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -64,21 +101,23 @@ nav a {
   font-size: 2rem;
   padding: 5px;
   flex-direction:column;
-  color:#000000
+  color:#ffcc00
 }
 .home__social a:hover{
-  color: rgb(2, 103, 219);
+  color: rgb(255, 255, 255);
   text-decoration:solid;
 }
 .name a:hover{
-  background: linear-gradient(to right, #392de1, #00c7e6);
+  background: linear-gradient(to right, #ff0000, #ffcc00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-decoration:solid;
 }
 nav a:hover{
-  color:  rgb(2, 103, 219);
-  text-decoration:solid;
+   text-decoration:underline;
+   text-decoration-color: #ffcc00;
+   text-decoration-thickness: 0.5rem;
+   text-underline-offset: 8px;
 }
 
 .intro{
@@ -104,7 +143,7 @@ section {
 .profile-photo {
   width: 250px;
   height: 280px;
-  border-radius: 50%;
+  border-radius: 10%;
   object-fit: cover;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   display: block;
@@ -120,7 +159,7 @@ section {
 /* ===== About Section ===== */
 .about h3 {
   font-weight: normal;
-  color: #222222;
+  color: #ffffff;
   margin-top: 1rem;
 }
 
@@ -133,7 +172,7 @@ section {
 }
 
 .project {
-  background: #e6e1dc;
+  background: rgba(80, 80, 80, 0.225);
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -148,13 +187,13 @@ section {
 .project h3 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-  color: #222;
+  font-size: 1.3rem;
+  color: #fffcf2b2;
 }
 
 .project p {
   font-size: 1rem;
-  color: #555;
+  color: #c3c3c3;
 }
 
 
@@ -186,10 +225,11 @@ form {
 }
 
 input, textarea {
+  color:#ffcc00;
   padding: 0.9rem;
   border: 1px solid #ccc;
   border-radius: 6px;
-  background-color: #e6e1dc;
+  background-color: rgba(80, 80, 80, 0.3);;
   font-family: inherit;
   font-size: 1rem;
   transition: border-color 0.3s ease;
@@ -204,7 +244,7 @@ button {
   width: 100%;
   height: 100%;
   padding: 0.9rem;
-  background: #3e87f4;
+  background: rgba(80, 80, 80, 0.3);;
   color: #e6e1dc;
   font-weight: bold;
   font-size: 1rem;
@@ -215,17 +255,17 @@ button {
 }
 
 button:hover {
-  color: #3e87f4;
-  background: #cbc5c5;
+  color: #ffcc00;
+  background: rgba(163, 163, 163, 0.3);;
 }
 
 /* ===== Footer ===== */
 footer {
-  background: #111;
+  background: rgba(80, 80, 80, 0.3);
   color: #aaa;
   text-align: center;
   padding: 1.5rem;
-  margin-top: 4rem;
+  margin-top: 2rem;
   font-size: 0.9rem;
 }
 
@@ -237,14 +277,20 @@ footer {
   font-size: 2rem;
   padding: 5px;
   flex-direction:column;
-  color:#ffffff
+  color:#595959
 }
 .home__social_footer a:hover{
-  color: rgb(2, 103, 219);
+  color: #ffcc00;
   text-decoration:solid;
 }
 
 /* ===== Animations ===== */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 @keyframes fadeInUp {
   to {
     opacity: 1;
@@ -327,7 +373,7 @@ footer {
   }
   
   .project {
-    background: #e6e1dc;
+    background: rgba(80, 80, 80, 0.225);
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
