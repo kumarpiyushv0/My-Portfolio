@@ -44,7 +44,7 @@
 }
 
 html {
-  scroll-padding-top: 100px; /* Adjust based on your sticky header height */
+  scroll-padding-top: 200px; /* Adjust based on your sticky header height */
   scroll-behavior: smooth;
 }
 
