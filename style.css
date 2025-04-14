@@ -5,6 +5,7 @@
   width: 100vw;
   height: 100vh;
   background-image: url("background.png");
+  background-repeat:no-repeat;
   color: #ffcc00;
   display: flex;
   align-items: center;
@@ -161,6 +162,34 @@ section {
   font-weight: normal;
   color: #ffffff;
   margin-top: 1rem;
+}
+/* ===== Skills Section ===== */
+.tools {
+  padding: 1rem;
+  max-width: 866px;
+  margin: auto;
+}
+
+.tool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.tool img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.tools img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 /* ===== Projects Section ===== */
