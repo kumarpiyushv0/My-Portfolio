@@ -342,7 +342,7 @@ footer {
 
 @media (max-width: 768px) {
   html {
-    scroll-padding-top: 150px; /* Adjust based on your sticky header height */
+    scroll-padding-top: 200px; /* Adjust based on your sticky header height */
     scroll-behavior: smooth;
   }
   header {
