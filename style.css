@@ -15,6 +15,8 @@
   transition: opacity 1s ease;
 }
 
+
+
 .blinking-dot1 {
   color: rgb(255, 0, 0); /* green dot, change as you like */
   animation: blink 0.5s steps(3) infinite;
@@ -36,6 +38,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 ::selection {
@@ -55,7 +58,7 @@ body {
   line-height: 1.6;
   
 }
-
+body::-webkit-scrollbar {   display: none;   scroll-behavior: smooth; }
 /* ===== Sticky Header ===== */
 header {
   display:flex;
