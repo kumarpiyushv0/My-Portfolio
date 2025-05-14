@@ -90,32 +90,41 @@
   </section>
 
   <div id="skills" class="tools">
-    <h2>Skills</h2><br>
-    <section id="tools" class="tool"></section>
-  </div>
+  <h2>Skills</h2><br>
+  <section id="tools" class="tool"></section>
+</div>
+
 <script>
   const skills = [
-    { src: 'node-js.png', alt: 'Node.js' },
-    { src: 'react.png', alt: 'React' },
-    { src: 'mongodb.png', alt: 'MongoDB' },
-    { src: 'mysql.png', alt: 'MySQL' },
-    { src: 'js.png', alt: 'JS' },
-    { src: 'nginx.png', alt: 'Nginx' },
-    { src: 'docker.png', alt: 'Docker' },
-    { src: 'github.png', alt: 'Github' },
-    { src: 'kubernets.png', alt: 'Kubernets' },
-    { src: 'postgresql.png', alt: 'Postgresql' },
+    { src: 'node-js.png', alt: 'Node.js', abbr: 'Node.js (Server-side JavaScript)' },
+    { src: 'react.png', alt: 'React', abbr: 'React (Frontend Library)' },
+    { src: 'mongodb.png', alt: 'MongoDB', abbr: 'MongoDB (NoSQL Database)' },
+    { src: 'mysql.png', alt: 'MySQL', abbr: 'MySQL (Relational Database)' },
+    { src: 'js.png', alt: 'JS', abbr: 'JavaScript (Programming Language)' },
+    { src: 'nginx.png', alt: 'Nginx', abbr: 'Nginx (Web Server)' },
+    { src: 'docker.png', alt: 'Docker', abbr: 'Docker (Containerization Platform)' },
+    { src: 'github.png', alt: 'Github', abbr: 'GitHub (Code Hosting Platform)' },
+    { src: 'kubernets.png', alt: 'Kubernets', abbr: 'Kubernetes (Container Orchestration)' },
+    { src: 'postgresql.png', alt: 'Postgresql', abbr: 'PostgreSQL (SQL Database)' },
+    { src: 'Linux.png', alt: 'Linux', abbr: 'Linux (Operating System)' },
   ];
 
   const toolsSection = document.getElementById('tools');
 
   skills.forEach(skill => {
+    const abbr = document.createElement('abbr');
+    abbr.title = skill.abbr;
+
     const img = document.createElement('img');
     img.src = skill.src;
     img.alt = skill.alt;
-    toolsSection.appendChild(img);
+    img.style.margin = '10px'; // optional styling
+
+    abbr.appendChild(img);
+    toolsSection.appendChild(abbr);
   });
 </script>
+
 
   <section id="contact">
     <h2>Contact Me</h2>
