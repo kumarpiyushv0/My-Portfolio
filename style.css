@@ -42,8 +42,8 @@
 }
 
 ::selection {
-  background-color: #2f2f2fac; /* light orange */
-  color: #ffcc00;              /* selected text color */
+  background-color: #2f2f2fac; 
+  color: #ffcc00;  /* selected text color */
 }
 
 html {
@@ -66,7 +66,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(80, 80, 80, 0.3);
+  background: rgba(10, 29, 241, 0.3);
   backdrop-filter: blur(8px);
   color: #ffcc00;
   padding: 1.5rem 2rem;
@@ -423,3 +423,4 @@ footer {
     padding: 0.7rem;
   }
 }
+z
