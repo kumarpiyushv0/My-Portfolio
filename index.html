@@ -29,7 +29,6 @@
       <a href="https://x.com/impk1103"><i class='bx bxl-twitter' ></i></a>
   </div>
   </header>
-
   
   <div class="intro">
     <section id="photo" class="photo">
@@ -42,11 +41,22 @@
       <h3>Hello! I'm a web developer with a passion for building beautiful and functional websites. I specialize in full-stack development using HTML, CSS, React, and JavaScript, and I love bringing ideas to life in the browser.</h3>
     </section>
   </div>
-  
- 
+
   <section id="projects" class="projects">
-    <h2>Projects</h2><br>
-    
+    <h2> Projects </h2><br>
+
+
+    <div class="project">
+      
+      <section id="photo" class="project_photo">
+        <a href="https://github.com/kumarpiyushv0/Multilevel_Parking_Kiosk"></i><img src="MLP.png" alt="Piyush Kumar" class="project__photo" /></a>
+      </section>
+      <h3> Intellipark Multilevel Parking </h3>
+      <p>A Java-based intelligent kiosk interface for managing a multilevel vehicle parking facility implemented using core OOPS concepts and using a graphical Swing UI, 
+        3D array file for parking status, MySQL for user data, and Dijkstra’s algorithm for optimal space allocation. This collectively ensures a fast and robust parking system.<br>
+           • Tools Used: JAVA, MySQL, Swing, Github.</p>
+    </div>
+
     <div class="project">
       
       <section id="photo" class="project_photo">
@@ -88,6 +98,19 @@
         • Tech Stack: HTML, Vanilla CSS, NGINX.<br>
         • Hosting: Deployed on an AWS EC2 (Ubuntu) instance using NGINX and integrated Git version control.</p>
     </div>
+
+    <!-- <div class="project">
+      
+      <section id="photo" class="project_photo">
+        <a href="https://kumarpiyushv0.github.io/livetimer/"></i><img src="brainfizz.jpg" alt="Piyush Kumar" class="project__photo" /></a>
+      </section>
+      <h3> Brainfizz </h3>
+      <p>Engineered a lightweight weather tracking web application that integrates real-time API calls to fetch and display current 
+        weather  conditions based on geolocation-based user input. Deployed on AWS EC2 with NGINX for high availability and 
+        optimized load times.<br>
+        • Tech Stack: HTML, Vanilla CSS, NGINX.<br>
+        • Hosting: Deployed on an AWS EC2 (Ubuntu) instance using NGINX and integrated Git version control.</p>
+    </div> -->
   </section>
 
   <div id="skills" class="tools">
@@ -97,6 +120,7 @@
 
 <script>
   const skills = [
+    { src: 'java.png', alt: 'JAVA', abbr: 'JAVA' },
     { src: 'node-js.png', alt: 'Node.js', abbr: 'Node.js (Server-side JavaScript)' },
     { src: 'react.png', alt: 'React', abbr: 'React (Frontend Library)' },
     { src: 'mongodb.png', alt: 'MongoDB', abbr: 'MongoDB (NoSQL Database)' },
@@ -108,6 +132,7 @@
     { src: 'kubernets.png', alt: 'Kubernets', abbr: 'Kubernetes (Container Orchestration)' },
     { src: 'postgresql.png', alt: 'Postgresql', abbr: 'PostgreSQL (SQL Database)' },
     { src: 'Linux.png', alt: 'Linux', abbr: 'Linux (Operating System)' },
+    { src: 'Kotlin.png', alt: 'Kotlin', abbr: 'Kotlin' },
   ];
 
   const toolsSection = document.getElementById('tools');

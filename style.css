@@ -196,10 +196,12 @@ section {
 
 /* ===== Projects Section ===== */
 .projects {
+  max-width: 1200px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   padding-top: 1rem;
+  
 }
 
 .project {
@@ -315,6 +317,33 @@ footer {
   text-decoration:solid;
 }
 
+
+.project_hero{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: rgba(80, 80, 80, 0.225);
+  padding: 5rem;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.project_photo_hero {
+  flex: 1 1 45%;                 /* grow, shrink, base 45% */
+  min-width: 280px;              /* avoid collapsing on mobile */
+  height: inherit;               /* inherit height from parent flex item */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ---------- The hero image ---------- */
+.project__photo_hero {
+  width: 80%;
+  height: 60%;
+  object-fit: cover;             
+}
+
 /* ===== Animations ===== */
 @keyframes blink {
   50% {
@@ -423,4 +452,4 @@ footer {
     padding: 0.7rem;
   }
 }
-z
+
