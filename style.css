@@ -14,7 +14,7 @@
 /* ===== Light Mode Overrides ===== */
 body.light-mode {
   --bg-image: url("background_light.png");
-  --bg-color: #00bcdd;
+  --bg-color: #ffffff;
   --text-color: #000000;
   --link-color: #0077ff;
   --link-hover: #000000;
