@@ -7,175 +7,245 @@
   <title>Piyush Kumar</title>
   <link rel="stylesheet" href="style.css" />
   <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
   <div id="intro">
     <h1>Piyush Kumar<span class="blinking-dot1">.</span><span class="blinking-dot2">.</span><span class="blinking-dot3">.</span></h1>
   </div>
-  
-  
+
   <div id="main-content" style="display: none;">
-  <header>
-    <h1 class="name"><a href="">▄ Piyush Kumar ▄</a></h1>
-    <nav aria-label="Main Navigation">
-      <a href="#">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="home__social">
-      <a href="https://www.linkedin.com/in/piyush-kumar-3b8a222b8" ><i class='bx bxl-linkedin'></i></a>
-      <a href="https://github.com/kumarpiyushv0" ><i class='bx bxl-github' ></i></a>
-      <a href="https://x.com/impk1103"><i class='bx bxl-twitter' ></i></a>
-  </div>
-  </header>
-  
-  <div class="intro">
-    <section id="photo" class="photo">
-      <img src="about2.jpg" alt="Piyush Kumar" class="profile-photo" />
-    </section>
-  
+    <header>
+      <h1 class="name"><a href="">▄ Piyush Kumar ▄</a></h1>
+      <nav aria-label="Main Navigation">
+        <a href="#">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="toggle" onclick="toggleTheme()"></button>
+      <div class="home__social">
+        <a href="https://www.linkedin.com/in/piyush-kumar-3b8a222b8" ><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/kumarpiyushv0" ><i class='bx bxl-github' ></i></a>
+        <a href="https://x.com/impk1103"><i class='bx bxl-twitter' ></i></a>
+      </div>
+      
+    </header>
+
+    <div class="intro">
+      <section class="photo">
+        <img src="about2.jpg" alt="Piyush Kumar" class="profile-photo" />
+      </section>
     
-    <section id="about" class="about">
-      <h2>About Me</h2>
-      <h3>Hello! I'm a web developer with a passion for building beautiful and functional websites. I specialize in full-stack development using HTML, CSS, React, and JavaScript, and I love bringing ideas to life in the browser.</h3>
+      <section id="about" class="about">
+        <h2>About Me</h2>
+        <h3>Hi! I'm an app developer building Apps and websites using various languages, tools and frameworks since 2023. I specialize in android app development as well as backend web development and I love bringing ideas to life.
+          These are some of my works i have done in past years.
+        </h3>
+      </section>
+    </div>
+
+
+    <div class="skills-marquee">
+      <div class="marquee">
+        <div class="marquee-content">
+          <img src="java.png" alt="JAVA" title="JAVA">
+          <img src="node-js.png" alt="Node.js" title="Node.js">
+          <img src="react.png" alt="React" title="React">
+          <img src="mongodb.png" alt="MongoDB" title="MongoDB">
+          <img src="mysql.png" alt="MySQL" title="MySQL">
+          <img src="js.png" alt="JavaScript" title="JavaScript">
+          <img src="nginx.png" alt="Nginx" title="Nginx">
+          <img src="docker.png" alt="Docker" title="Docker">
+          <img src="github.png" alt="GitHub" title="GitHub">
+          <img src="postgresql.png" alt="PostgreSQL" title="PostgreSQL">
+          <img src="Linux.png" alt="Linux" title="Linux">
+          <img src="Kotlin.png" alt="Kotlin" title="Kotlin">
+          <img src="androidStudio.png" alt="Android Studio" title="Android Studio">
+        </div>
+        <div class="marquee-content">
+          <img src="java.png" alt="JAVA" title="JAVA">
+          <img src="node-js.png" alt="Node.js" title="Node.js">
+          <img src="react.png" alt="React" title="React">
+          <img src="mongodb.png" alt="MongoDB" title="MongoDB">
+          <img src="mysql.png" alt="MySQL" title="MySQL">
+          <img src="js.png" alt="JavaScript" title="JavaScript">
+          <img src="nginx.png" alt="Nginx" title="Nginx">
+          <img src="docker.png" alt="Docker" title="Docker">
+          <img src="github.png" alt="GitHub" title="GitHub">
+          <img src="postgresql.png" alt="PostgreSQL" title="PostgreSQL">
+          <img src="Linux.png" alt="Linux" title="Linux">
+          <img src="Kotlin.png" alt="Kotlin" title="Kotlin">
+          <img src="androidStudio.png" alt="Android Studio" title="Android Studio">
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===== Projects Section ===== -->
+    <section id="projects" class="projects">
+      <h2> Projects </h2><br>
+
+
+       <div class="project">
+        <section class="project_photo">
+          <a href="https://the-car-dealership-eadx.onrender.com/">
+            <img src="image3.png" alt="Car Dealership" class="project__photo" />
+          </a>
+        </section>
+        <h3>The Car Dealership</h3>
+        <p>
+          Designed and developed a full-stack web application which takes the local dealerships to an online platform.
+        </p>
+        <div class="project-tech-icons">
+          <img src="mongodb.png" alt="MongoDB" title="MongoDB">
+          <img src="node-js.png" alt="Node.js" title="Node.js">
+          <img src="js.png" alt="JavaScript" title="JavaScript">
+          <img src="github.png" alt="GitHub" title="GitHub">
+        </div>
+      </div>
+
+      <div class="project">
+        <section class="project_photo">
+          <a href="https://use-popcorn-delta-jade.vercel.app/">
+            <img src="image.png" alt="Movie Rating App" class="project__photo" />
+          </a>
+        </section>
+        <h3>Movie Rating & Progress Tracker</h3>
+        <p>
+          Designed and developed a full-stack web application for tracking watched movies, calculating average ratings, and providing real-time analytics on user watch time.
+        </p>
+        <div class="project-tech-icons">
+          <img src="react.png" alt="React" title="React">
+          <img src="js.png" alt="JavaScript" title="JavaScript">
+          <img src="github.png" alt="GitHub" title="GitHub">
+        </div>
+      </div>
+
+      <div class="project">
+        <section class="project_photo">
+          <a href="https://travel-list-orpin-phi.vercel.app/">
+            <img src="image2.png" alt="Travel Tracker" class="project__photo" />
+          </a>
+        </section>
+        <h3>Traveling Items Tracker & To-Do List</h3>
+        <p>
+          Built a responsive and interactive to-do list web application to help users efficiently track travel essentials. Integrated React hooks for state management. Implemented CRUD operations.
+        </p>
+        <div class="project-tech-icons">
+          <img src="react.png" alt="React" title="React">
+          <img src="mongodb.png" alt="MongoDB" title="MongoDB">
+          <img src="node-js.png" alt="Node.js" title="Node.js">
+          <img src="github.png" alt="GitHub" title="GitHub">
+        </div>
+      </div>
+
+      <div class="project">
+        <section class="project_photo">
+          <a href="https://github.com/kumarpiyushv0/Multilevel_Parking_Kiosk">
+            <img src="MLP.png" alt="Piyush Kumar" class="project__photo" />
+          </a>
+        </section>
+        <h3>Intellipark Multilevel Parking</h3>
+        <p>
+          A Java-based intelligent kiosk interface for managing a multilevel vehicle parking facility implemented using core OOPS concepts and using a graphical Swing UI, 
+          3D array file for parking status, MySQL for user data, and Dijkstra’s algorithm for optimal space allocation.
+        </p>
+        <div class="project-tech-icons">
+          <img src="java.png" alt="Java" title="Java">
+          <img src="mysql.png" alt="MySQL" title="MySQL">
+          <img src="github.png" alt="GitHub" title="GitHub">
+        </div>
+      </div>
+
+      <div class="project">
+        <section class="project_photo">
+          <a href="https://kumarpiyushv0.github.io/livetimer/">
+            <img src="image4.png" alt="Weather API Integration" class="project__photo" />
+          </a>
+        </section>
+        <h3>Weather API Integration</h3>
+        <p>
+          Engineered a lightweight weather tracking web application that integrates real-time API calls to fetch and display current weather conditions based on geolocation input. Deployed on AWS EC2 with NGINX.
+        </p>
+        <div class="project-tech-icons">
+          <img src="nginx.png" alt="NGINX" title="NGINX">
+          <img src="github.png" alt="GitHub" title="GitHub">
+        </div>
+      </div>
     </section>
+
+    <!-- ===== Skills Section ===== -->
+    <div id="skills" class="skills-marquee">
+      <h2>Skills</h2><br>
+      <div class="marquee">
+        <div class="marquee-content">
+          <img src="java.png" alt="JAVA" title="JAVA">
+          <img src="node-js.png" alt="Node.js" title="Node.js">
+          <img src="react.png" alt="React" title="React">
+          <img src="mongodb.png" alt="MongoDB" title="MongoDB">
+          <img src="mysql.png" alt="MySQL" title="MySQL">
+          <img src="js.png" alt="JavaScript" title="JavaScript">
+          <img src="nginx.png" alt="Nginx" title="Nginx">
+          <img src="docker.png" alt="Docker" title="Docker">
+          <img src="github.png" alt="GitHub" title="GitHub">
+          <img src="postgresql.png" alt="PostgreSQL" title="PostgreSQL">
+          <img src="Linux.png" alt="Linux" title="Linux">
+          <img src="Kotlin.png" alt="Kotlin" title="Kotlin">
+          <img src="androidStudio.png" alt="Android Studio" title="Android Studio">
+        </div>
+        <div class="marquee-content">
+          <img src="java.png" alt="JAVA" title="JAVA">
+          <img src="node-js.png" alt="Node.js" title="Node.js">
+          <img src="react.png" alt="React" title="React">
+          <img src="mongodb.png" alt="MongoDB" title="MongoDB">
+          <img src="mysql.png" alt="MySQL" title="MySQL">
+          <img src="js.png" alt="JavaScript" title="JavaScript">
+          <img src="nginx.png" alt="Nginx" title="Nginx">
+          <img src="docker.png" alt="Docker" title="Docker">
+          <img src="github.png" alt="GitHub" title="GitHub">
+          <img src="postgresql.png" alt="PostgreSQL" title="PostgreSQL">
+          <img src="Linux.png" alt="Linux" title="Linux">
+          <img src="Kotlin.png" alt="Kotlin" title="Kotlin">
+          <img src="androidStudio.png" alt="Android Studio" title="Android Studio">
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Contact Section ===== -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <textarea name="message" rows="5" placeholder="Message" required></textarea>
+        <button class="btn" type="submit">Send</button>
+      </form>
+      <p id="responseMessage" style="margin-top: 10px;"></p>
+    </section>
+
+    <footer>
+      <p>© 2025 Piyush Kumar. All rights reserved.</p>
+      <div class="home__social_footer">
+        <a href="https://www.linkedin.com/in/piyush-kumar-3b8a222b8"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/kumarpiyushv0"><i class='bx bxl-github'></i></a>
+        <a href="https://x.com/impk1103"><i class='bx bxl-twitter'></i></a>
+      </div>
+    </footer>
   </div>
-
-  <section id="projects" class="projects">
-    <h2> Projects </h2><br>
-
-
-    <div class="project">
-      
-      <section id="photo" class="project_photo">
-        <a href="https://github.com/kumarpiyushv0/Multilevel_Parking_Kiosk"></i><img src="MLP.png" alt="Piyush Kumar" class="project__photo" /></a>
-      </section>
-      <h3> Intellipark Multilevel Parking </h3>
-      <p>A Java-based intelligent kiosk interface for managing a multilevel vehicle parking facility implemented using core OOPS concepts and using a graphical Swing UI, 
-        3D array file for parking status, MySQL for user data, and Dijkstra’s algorithm for optimal space allocation. This collectively ensures a fast and robust parking system.<br>
-           • Tools Used: JAVA, MySQL, Swing, Github.</p>
-    </div>
-
-    <div class="project">
-      
-      <section id="photo" class="project_photo">
-        <a href="https://use-popcorn-delta-jade.vercel.app/"></i><img src="image.png" alt="Piyush Kumar" class="project__photo" /></a>
-      </section>
-      <h3> Movie rating and progress tracker. </h3>
-      <p>Designed and developed a full-stack web application for tracking watched movies, calculating average ratings, and providing    
-        real-time analytics on user watch time.<br>
-           • Tools Used: ReactJs, MongoDb, NodeJs, Github.</p>
-    </div>
-    <div class="project">
-      
-      <section id="photo" class="project_photo">
-        <a href="https://travel-list-orpin-phi.vercel.app/"></i><img src="image2.png" alt="Piyush Kumar" class="project__photo" /></a>
-      </section>
-      <h3>  Traveling items tracker & todo list. </h3>
-      <p>Built a responsive and interactive to-do list web application to help users efficiently track travel essentials. Integrated React 
-        hooks for state management. Implemented CRUD operations..<br>
-           • Tools Used: ReactJs, MongoDb, NodeJs, Github.</p>
-    </div>
-    <div class="project">
-     
-      <section id="photo" class="project_photo">
-        <a href="https://the-car-dealership-eadx.onrender.com/"></i><img src="image3.png" alt="Piyush Kumar" class="project__photo" /></a>
-      </section>
-      <h3> The Car Dealership. </h3>
-      <p>Designed and developed a full-stack web application which takes the local dealerships to online platform for better oppurtunities.<br>
-           • Tools Used: EJS, CSS, Express, MongoDb, NodeJs, Github.</p>
-    </div>
-    <div class="project">
-      
-      <section id="photo" class="project_photo">
-        <a href="https://kumarpiyushv0.github.io/livetimer/"></i><img src="image4.png" alt="Piyush Kumar" class="project__photo" /></a>
-      </section>
-      <h3> Weather API Integration. </h3>
-      <p>Engineered a lightweight weather tracking web application that integrates real-time API calls to fetch and display current 
-        weather  conditions based on geolocation-based user input. Deployed on AWS EC2 with NGINX for high availability and 
-        optimized load times.<br>
-        • Tech Stack: HTML, Vanilla CSS, NGINX.<br>
-        • Hosting: Deployed on an AWS EC2 (Ubuntu) instance using NGINX and integrated Git version control.</p>
-    </div>
-
-    <!-- <div class="project">
-      
-      <section id="photo" class="project_photo">
-        <a href="https://kumarpiyushv0.github.io/livetimer/"></i><img src="brainfizz.jpg" alt="Piyush Kumar" class="project__photo" /></a>
-      </section>
-      <h3> Brainfizz </h3>
-      <p>Engineered a lightweight weather tracking web application that integrates real-time API calls to fetch and display current 
-        weather  conditions based on geolocation-based user input. Deployed on AWS EC2 with NGINX for high availability and 
-        optimized load times.<br>
-        • Tech Stack: HTML, Vanilla CSS, NGINX.<br>
-        • Hosting: Deployed on an AWS EC2 (Ubuntu) instance using NGINX and integrated Git version control.</p>
-    </div> -->
-  </section>
-
-  <div id="skills" class="tools">
-  <h2>Skills</h2><br>
-  <section id="tools" class="tool"></section>
-</div>
-
-<script>
-  const skills = [
-    { src: 'java.png', alt: 'JAVA', abbr: 'JAVA' },
-    { src: 'node-js.png', alt: 'Node.js', abbr: 'Node.js (Server-side JavaScript)' },
-    { src: 'react.png', alt: 'React', abbr: 'React (Frontend Library)' },
-    { src: 'mongodb.png', alt: 'MongoDB', abbr: 'MongoDB (NoSQL Database)' },
-    { src: 'mysql.png', alt: 'MySQL', abbr: 'MySQL (Relational Database)' },
-    { src: 'js.png', alt: 'JS', abbr: 'JavaScript (Programming Language)' },
-    { src: 'nginx.png', alt: 'Nginx', abbr: 'Nginx (Web Server)' },
-    { src: 'docker.png', alt: 'Docker', abbr: 'Docker (Containerization Platform)' },
-    { src: 'github.png', alt: 'Github', abbr: 'GitHub (Code Hosting Platform)' },
-    { src: 'kubernets.png', alt: 'Kubernets', abbr: 'Kubernetes (Container Orchestration)' },
-    { src: 'postgresql.png', alt: 'Postgresql', abbr: 'PostgreSQL (SQL Database)' },
-    { src: 'Linux.png', alt: 'Linux', abbr: 'Linux (Operating System)' },
-    { src: 'Kotlin.png', alt: 'Kotlin', abbr: 'Kotlin' },
-  ];
-
-  const toolsSection = document.getElementById('tools');
-
-  skills.forEach(skill => {
-    const abbr = document.createElement('abbr');
-    abbr.title = skill.abbr;
-
-    const img = document.createElement('img');
-    img.src = skill.src;
-    img.alt = skill.alt;
-    img.style.margin = '10px'; // optional styling
-
-    abbr.appendChild(img);
-    toolsSection.appendChild(abbr);
-  });
-</script>
-
-
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form id="contactForm">
-      <input type="text" name="name" placeholder="Name" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" rows="5" placeholder="Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-    <p id="responseMessage" style="margin-top: 10px;"></p>
-  </section>
 
   <script>
     window.addEventListener('load', () => {
-    setTimeout(() => {
-      const intro = document.getElementById('intro');
-      intro.style.opacity = '0';
       setTimeout(() => {
-        intro.style.display = 'none';
-        document.getElementById('main-content').style.display = 'block';
-      }, 1000); // match the transition duration
-    }, 2000); // how long the intro shows (in ms)
-  });
-
-
+        const intro = document.getElementById('intro');
+        intro.style.opacity = '0';
+        setTimeout(() => {
+          intro.style.display = 'none';
+          document.getElementById('main-content').style.display = 'block';
+        }, 1000);
+      }, 2000);
+    });
 
     document.getElementById("contactForm").addEventListener("submit", async function (e) {
       e.preventDefault();
@@ -214,31 +284,12 @@
         responseEl.style.color = "red";
       }
     });
-  </script>
+     const button = document.querySelector('.toggle');
 
- 
-  <footer>
-    <p>© 2025 Piyush Kumar. All rights reserved.</p>
-    <div class="home__social_footer">
-      <a href="https://www.linkedin.com/in/piyush-kumar-3b8a222b8" ><i class='bx bxl-linkedin'></i></a>
-      <a href="https://github.com/kumarpiyushv0" ><i class='bx bxl-github' ></i></a>
-      <a href="https://x.com/impk1103"><i class='bx bxl-twitter' ></i></a>
-  </div>
-  </footer>
-
-  <script>
-    fetch("http://localhost:8000/send", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    name: "Piyush",
-    email: "piyush@example.com",
-    message: "Hello, this is a test!",
-  }),
-});
+function toggleTheme() {
+  document.body.classList.toggle('light-mode');
+  button.classList.toggle('active');
+}
   </script>
-  </div>
 </body>
 </html>
-
-
