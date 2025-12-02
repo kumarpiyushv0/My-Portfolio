@@ -26,7 +26,8 @@ const Contact = () => {
 
         try {
             // Use the deployed backend URL or local if configured
-            const response = await fetch("https://my-portfolio-l797.onrender.com/", {
+            const API_URL = import.meta.env.MODE === 'development' ? "http://localhost:8000" : "https://my-portfolio-l797.onrender.com/";
+            const response = await fetch(API_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, email, message }),
