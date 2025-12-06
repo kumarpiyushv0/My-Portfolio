@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import carDealership from '../assets/image3.png';
 import movieApp from '../assets/image.png';
 import travelTracker from '../assets/image2.png';
@@ -103,7 +104,22 @@ const Projects = () => {
 
             <div className="featured-projects">
                 {featuredProjects.map((project, index) => (
-                    <div className={`project project--featured ${index % 2 !== 0 ? 'reverse' : ''}`} key={`featured-${index}`}>
+                    <motion.div
+                        className={`project project--featured ${index % 2 !== 0 ? 'reverse' : ''}`}
+                        key={`featured-${index}`}
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6, delay: index * 0.2 }}
+                        onMouseMove={(e) => {
+                            const rect = e.currentTarget.getBoundingClientRect();
+                            const x = e.clientX - rect.left;
+                            const y = e.clientY - rect.top;
+                            e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+                            e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+                        }}
+                    >
+                        <div className="spotlight-overlay"></div>
                         <section className="project_photo">
                             <a href={project.link} target="_blank" rel="noopener noreferrer">
                                 <img src={project.image} alt={project.title} className="project__photo" />
@@ -118,7 +134,7 @@ const Projects = () => {
                                 ))}
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
 
