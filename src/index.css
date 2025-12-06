@@ -33,7 +33,7 @@
 .skills-sidebar {
   position: fixed;
   left: 0;
-  top: 50%;
+  top: 55%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -1412,4 +1412,39 @@ footer {
   color: #000;
   font-weight: 800;
   letter-spacing: 1px;
+}
+
+/* ===================================== */
+/* ===== Tablet Optimizations ===== */
+/* ===================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --sidebar-width-expanded: 220px;
+    /* More compact for tablets */
+  }
+
+  .skills-sidebar {
+    /* Ensure it doesn't block too much */
+    max-height: 70vh;
+  }
+
+  .skill-name {
+    font-size: 0.75rem;
+    /* Smaller text */
+  }
+
+  .sidebar-skill-item {
+    padding: 8px 4px;
+    gap: 8px;
+  }
+
+  .skill-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .skill-icon img {
+    width: 24px;
+    height: 24px;
+  }
 }
