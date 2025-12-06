@@ -12,6 +12,8 @@ import postgresql from '../assets/postgresql.png';
 import linux from '../assets/Linux.png';
 import kotlin from '../assets/Kotlin.png';
 import androidStudio from '../assets/androidStudio.png';
+import firebase from '../assets/firebase.png';
+import gemini from '../assets/google-gemini.png';
 
 const skills = [
     { src: java, alt: "JAVA" },
@@ -27,6 +29,8 @@ const skills = [
     { src: linux, alt: "Linux" },
     { src: kotlin, alt: "Kotlin" },
     { src: androidStudio, alt: "Android Studio" },
+    { src: firebase, alt: "Firebase" },
+    { src: gemini, alt: "Gemini AI" },
 ];
 
 const Skills = () => {

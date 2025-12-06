@@ -18,8 +18,19 @@ import mysql from '../assets/mysql.png';
 import nginx from '../assets/nginx.png';
 import kotlin from '../assets/Kotlin.png';
 import androidStudio from '../assets/androidStudio.png';
+import firebase from '../assets/firebase.png';
+import gemini from '../assets/google-gemini.png';
+import garuda from '../assets/garuda_cover.png';
 
 const projects = [
+    {
+        title: "Garuda",
+        image: garuda,
+        link: "https://github.com/kumarpiyushv0/Garuda",
+        description: "A personal safety application designed to provide peace of mind and immediate assistance in emergencies. It features Instant SOS Alerts, Real-Time Location Sharing, Discreet Audio Recording, and Voice Activation to ensure your loved ones know you're safe.",
+        tech: [kotlin, androidStudio, firebase, gemini, github],
+        isFeatured: true
+    },
     {
         title: "News App",
         image: newsApp,
