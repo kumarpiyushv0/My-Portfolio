@@ -13,7 +13,6 @@ import linux from '../assets/Linux.png';
 import kotlin from '../assets/Kotlin.png';
 import androidStudio from '../assets/androidStudio.png';
 import firebase from '../assets/firebase.png';
-import gemini from '../assets/google-gemini.png';
 
 // Skills with experience ratings (1-5 stars)
 const skillsWithRatings = [
@@ -31,7 +30,6 @@ const skillsWithRatings = [
     { src: github, alt: "GitHub", rating: 5 },
     { src: postgresql, alt: "PostgreSQL", rating: 2 },
     { src: linux, alt: "Linux", rating: 4 },
-    { src: gemini, alt: "Gemini AI", rating: 3 },
 ];
 
 // Star rating component
