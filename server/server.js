@@ -31,7 +31,7 @@ app.post("/", async (req, res) => {
   try {
     await transporter.sendMail({
       from: 'impk1103+myPortfolio@gmail.com',
-      to: "impk1103@gmail.com",
+      to: "kumarpiyush.v0@gmail.com",
       subject: `New Message from ${name}`,
       html: `
         <h3>New Contact Form Submission</h3>
