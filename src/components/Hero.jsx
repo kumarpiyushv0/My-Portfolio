@@ -1,10 +1,10 @@
 import React from 'react';
-import profilePhoto from '../assets/about2.jpg';
+import { ASSETS } from '../assets';
 
 const Hero = () => {
     return (
         <section className="photo">
-            <img src={profilePhoto} alt="Piyush Kumar" className="profile-photo" />
+            <img src={ASSETS.profilePhoto} alt="Piyush Kumar" className="profile-photo" />
         </section>
     );
 };

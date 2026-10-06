@@ -1,7 +1,7 @@
 import React from 'react';
-import { FaLinkedin, FaGithub, FaTwitter, FaSun, FaMoon } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
 
-const Header = ({ theme, toggleTheme }) => {
+const Header = () => {
     return (
         <header>
             <h1 className="name"><a href="#">▄ Piyush Kumar ▄</a></h1>
@@ -12,18 +12,9 @@ const Header = ({ theme, toggleTheme }) => {
                 <a href="#contact">Contact</a>
             </nav>
             <div className="home__social">
-                <button
-                    className={`toggle ${theme === 'light' ? 'active' : ''}`}
-                    onClick={toggleTheme}
-                    aria-label="Toggle Theme"
-                >
-                    <div className="toggle-thumb">
-                        {theme === 'light' ? <FaSun color="#FDB813" /> : <FaMoon color="#2196F3" />}
-                    </div>
-                </button>
-                <a href="https://www.linkedin.com/in/piyush-kumar-3b8a222b8" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-                <a href="https://github.com/kumarpiyushv0" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-                <a href="https://x.com/impk1103" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+                <a href="https://www.linkedin.com/in/piyush-kumar-3b8a222b8" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
+                <a href="https://github.com/kumarpiyushv0" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
+                <a href="https://x.com/impk1103" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X"><FaTwitter /></a>
             </div>
         </header>
     );

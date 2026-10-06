@@ -1,35 +1,22 @@
 import React from 'react';
-import java from '../assets/java.png';
-import nodejs from '../assets/node-js.png';
-import reactIcon from '../assets/react.png';
-import mongodb from '../assets/mongodb.png';
-import mysql from '../assets/mysql.png';
-import js from '../assets/js.png';
-import nginx from '../assets/nginx.png';
-import docker from '../assets/docker.png';
-import github from '../assets/github.png';
-import postgresql from '../assets/postgresql.png';
-import linux from '../assets/Linux.png';
-import kotlin from '../assets/Kotlin.png';
-import androidStudio from '../assets/androidStudio.png';
-import firebase from '../assets/firebase.png';
+import { ASSETS } from '../assets';
 
 // Skills with experience ratings (1-5 stars)
 const skillsWithRatings = [
-    { src: java, alt: "JAVA", rating: 4 },
-    { src: nodejs, alt: "Node.js", rating: 4 },
-    { src: androidStudio, alt: "Android Studio", rating: 4 },
-    { src: kotlin, alt: "Kotlin", rating: 4 },
-    { src: mongodb, alt: "MongoDB", rating: 4 },
-    { src: firebase, alt: "Firebase", rating: 3 },
-    { src: mysql, alt: "MySQL", rating: 3 },
-    { src: js, alt: "JavaScript", rating: 3 },
-    { src: nginx, alt: "Nginx", rating: 2 },
-    { src: reactIcon, alt: "React", rating: 2 },
-    { src: docker, alt: "Docker", rating: 3 },
-    { src: github, alt: "GitHub", rating: 5 },
-    { src: postgresql, alt: "PostgreSQL", rating: 2 },
-    { src: linux, alt: "Linux", rating: 4 },
+    { src: ASSETS.java, alt: "JAVA", rating: 4 },
+    { src: ASSETS.nodejs, alt: "Node.js", rating: 4 },
+    { src: ASSETS.androidStudio, alt: "Android Studio", rating: 4 },
+    { src: ASSETS.kotlin, alt: "Kotlin", rating: 4 },
+    { src: ASSETS.mongodb, alt: "MongoDB", rating: 4 },
+    { src: ASSETS.firebase, alt: "Firebase", rating: 3 },
+    { src: ASSETS.mysql, alt: "MySQL", rating: 3 },
+    { src: ASSETS.js, alt: "JavaScript", rating: 3 },
+    { src: ASSETS.nginx, alt: "Nginx", rating: 2 },
+    { src: ASSETS.react, alt: "React", rating: 2 },
+    { src: ASSETS.docker, alt: "Docker", rating: 3 },
+    { src: ASSETS.github, alt: "GitHub", rating: 5 },
+    { src: ASSETS.postgresql, alt: "PostgreSQL", rating: 2 },
+    { src: ASSETS.linux, alt: "Linux", rating: 4 },
 ];
 
 // Star rating component

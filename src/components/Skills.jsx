@@ -1,34 +1,21 @@
 import React from 'react';
-import java from '../assets/java.png';
-import nodejs from '../assets/node-js.png';
-import reactIcon from '../assets/react.png';
-import mongodb from '../assets/mongodb.png';
-import mysql from '../assets/mysql.png';
-import js from '../assets/js.png';
-import nginx from '../assets/nginx.png';
-import docker from '../assets/docker.png';
-import github from '../assets/github.png';
-import postgresql from '../assets/postgresql.png';
-import linux from '../assets/Linux.png';
-import kotlin from '../assets/Kotlin.png';
-import androidStudio from '../assets/androidStudio.png';
-import firebase from '../assets/firebase.png';
+import { ASSETS } from '../assets';
 
 const skills = [
-    { src: java, alt: "JAVA" },
-    { src: nodejs, alt: "Node.js" },
-    { src: reactIcon, alt: "React" },
-    { src: mongodb, alt: "MongoDB" },
-    { src: mysql, alt: "MySQL" },
-    { src: js, alt: "JavaScript" },
-    { src: nginx, alt: "Nginx" },
-    { src: docker, alt: "Docker" },
-    { src: github, alt: "GitHub" },
-    { src: postgresql, alt: "PostgreSQL" },
-    { src: linux, alt: "Linux" },
-    { src: kotlin, alt: "Kotlin" },
-    { src: androidStudio, alt: "Android Studio" },
-    { src: firebase, alt: "Firebase" },
+    { src: ASSETS.java, alt: "JAVA" },
+    { src: ASSETS.nodejs, alt: "Node.js" },
+    { src: ASSETS.react, alt: "React" },
+    { src: ASSETS.mongodb, alt: "MongoDB" },
+    { src: ASSETS.mysql, alt: "MySQL" },
+    { src: ASSETS.js, alt: "JavaScript" },
+    { src: ASSETS.nginx, alt: "Nginx" },
+    { src: ASSETS.docker, alt: "Docker" },
+    { src: ASSETS.github, alt: "GitHub" },
+    { src: ASSETS.postgresql, alt: "PostgreSQL" },
+    { src: ASSETS.linux, alt: "Linux" },
+    { src: ASSETS.kotlin, alt: "Kotlin" },
+    { src: ASSETS.androidStudio, alt: "Android Studio" },
+    { src: ASSETS.firebase, alt: "Firebase" },
 ];
 
 const Skills = () => {
