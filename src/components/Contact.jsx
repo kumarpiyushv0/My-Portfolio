@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { supabase } from '../supabaseClient';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ const Contact = () => {
     });
     const [status, setStatus] = useState('');
     const [statusColor, setStatusColor] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -24,29 +26,38 @@ const Contact = () => {
             return;
         }
 
+        setLoading(true);
+        setStatus("Sending...");
+        setStatusColor("gray");
+
         try {
-            // Use relative path for Vercel and local dev (via proxy)
-            const API_URL = "/api";
-            const response = await fetch(API_URL, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, email, message }),
+            // 1. Save to Supabase Database
+            const { error: dbError } = await supabase
+                .from('contact_messages')
+                .insert([{ name, email, message }]);
+
+            if (dbError) {
+                console.error("Database insert error:", dbError);
+            }
+
+            // 2. Send email notification via Supabase Edge Function (Resend)
+            const { error: fnError } = await supabase.functions.invoke('send-contact-email', {
+                body: { name, email, message }
             });
 
-            const result = await response.json();
-
-            if (response.ok) {
-                setStatus(result.message);
-                setStatusColor("green");
-                setFormData({ name: '', email: '', message: '' });
-            } else {
-                setStatus(result.error || "Failed to send message.");
-                setStatusColor("red");
+            if (fnError && dbError) {
+                throw fnError;
             }
+
+            setStatus("Message sent successfully!");
+            setStatusColor("green");
+            setFormData({ name: '', email: '', message: '' });
         } catch (err) {
-            console.error("Error:", err);
+            console.error("Error sending message:", err);
             setStatus("An error occurred. Please try again.");
             setStatusColor("red");
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -78,7 +89,9 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                 ></textarea>
-                <button className="btn" type="submit">Send</button>
+                <button className="btn" type="submit" disabled={loading}>
+                    {loading ? "Sending..." : "Send"}
+                </button>
             </form>
             <p id="responseMessage" style={{ marginTop: '10px', color: statusColor }}>{status}</p>
         </section>
