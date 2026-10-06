@@ -239,6 +239,8 @@ body.light-mode .sidebar-skill-item:hover {
 html {
   scroll-padding-top: 150px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -259,6 +261,13 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.App {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body::-webkit-scrollbar {
@@ -1324,6 +1333,65 @@ footer {
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+
+  /* Carousel Mobile Fixes */
+  .carousel-3d-container {
+    height: 280px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .carousel-card {
+    width: min(80vw, 300px);
+  }
+
+  .carousel-card.active {
+    transform: translate(-50%, -50%) scale(1.02);
+  }
+
+  .carousel-card.prev {
+    transform: translate(-50%, -50%) translateX(-105%) scale(0.75) rotateY(15deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .carousel-card.next {
+    transform: translate(-50%, -50%) translateX(105%) scale(0.75) rotateY(-15deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .card-image-wrapper {
+    height: 180px;
+  }
+
+  .carousel-controls {
+    padding: 0 0.5rem;
+  }
+
+  .carousel-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+
+  .project-details {
+    margin: 1.5rem auto;
+    padding: 0 0.5rem;
+  }
+
+  .project-details h3 {
+    font-size: 1.5rem;
+  }
+
+  .project-details p {
+    font-size: 0.95rem;
+  }
+
+  form {
+    padding: 1.5rem;
+    width: 100%;
   }
 
   input,
