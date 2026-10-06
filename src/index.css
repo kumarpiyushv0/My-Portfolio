@@ -459,6 +459,42 @@ section {
   max-width: 600px;
 }
 
+/* ===== Resume Download Button ===== */
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  color: #000;
+  background: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+}
+
+.resume-btn:hover {
+  background: transparent;
+  color: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 204, 0, 0.4);
+}
+
+body.light-mode .resume-btn {
+  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.25);
+}
+
+body.light-mode .resume-btn:hover {
+  box-shadow: 0 8px 25px rgba(217, 119, 6, 0.35);
+}
+
 /* ===== Skills Section ===== */
 .tools {
   padding: 1rem;

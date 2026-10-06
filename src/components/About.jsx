@@ -1,5 +1,7 @@
 import React from 'react';
 
+const RESUME_URL = "https://ixereoqdgdptfaooscrq.supabase.co/storage/v1/object/public/resume/My_resume.pdf";
+
 const About = () => {
   return (
     <section id="about" className="about">
@@ -9,6 +11,15 @@ const About = () => {
         I specialize in android app development as well as backend web development and I love bringing ideas to life.
         These are some of my works i have done in past years.
       </h3>
+      <a
+        href={RESUME_URL}
+        download="Piyush_Kumar_Resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="resume-btn"
+      >
+        View Resume
+      </a>
     </section>
   );
 };
