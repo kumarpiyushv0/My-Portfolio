@@ -12,16 +12,16 @@ const reportMissingConfiguration = (variableName) => {
 };
 
 export const initAnalytics = () => {
-  const apiKey = import.meta.env.VITE_POSTHOG_KEY;
-  const apiHost = import.meta.env.VITE_POSTHOG_HOST;
+  const apiKey = (import.meta.env.POSTHOG_KEY || import.meta.env.VITE_POSTHOG_KEY)?.trim();
+  const apiHost = (import.meta.env.POSTHOG_HOST || import.meta.env.VITE_POSTHOG_HOST || 'https://us.i.posthog.com')?.trim();
 
   if (!apiKey) {
-    reportMissingConfiguration('VITE_POSTHOG_KEY');
+    reportMissingConfiguration('POSTHOG_KEY / VITE_POSTHOG_KEY');
     return;
   }
 
   if (!apiHost) {
-    reportMissingConfiguration('VITE_POSTHOG_HOST');
+    reportMissingConfiguration('POSTHOG_HOST / VITE_POSTHOG_HOST');
     return;
   }
 
