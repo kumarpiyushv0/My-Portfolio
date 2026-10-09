@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { supabase } from '../supabaseClient';
-import { trackEvent, trackButtonClick } from '../analytics';
+import { trackEvent, trackButtonClick, identifyVisitor } from '../analytics';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -53,17 +53,13 @@ const Contact = () => {
             setStatus("Message sent successfully!");
             setStatusColor("green");
             setFormData({ name: '', email: '', message: '' });
-            trackEvent('contact_form_submitted');
-            portfolioLogger.info('contact delivery completed', {
-                event: 'contact_delivery_completed',
-                database_insert_failed: Boolean(dbError),
-                edge_function_failed: Boolean(fnError),
+            identifyVisitor(name, email);
+            trackEvent('contact_form_submitted', {
+                visitor_name: name,
+                visitor_email: email,
             });
         } catch (err) {
             console.error("Error sending message:", err);
-            portfolioLogger.error('contact delivery failed', {
-                event: 'contact_delivery_failed',
-            });
             setStatus("An error occurred. Please try again.");
             setStatusColor("red");
         } finally {
