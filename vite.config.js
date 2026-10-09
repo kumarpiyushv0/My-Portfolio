@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  envPrefix: ['VITE_', 'POSTHOG_', 'SUPABASE_'],
+  envPrefix: ['SUPABASE_URL', 'ANON_KEY', 'POSTHOG_'],
   server: {
     proxy: {
       '/api': {
