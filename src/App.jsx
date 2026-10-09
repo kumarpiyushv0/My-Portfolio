@@ -9,21 +9,29 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SkillsSidebar from './components/SkillsSidebar';
 import ThemeToggle from './components/ThemeToggle';
-import { portfolioLogger, useSectionTracking } from './analytics';
+import { trackEvent, useSectionTracking } from './analytics';
 import './index.css';
+
+const PORTFOLIO_SECTIONS = [
+  { id: 'hero', name: 'Hero Section' },
+  { id: 'about', name: 'About Me' },
+  { id: 'skills', name: 'Skills' },
+  { id: 'projects', name: 'Projects' },
+  { id: 'contact', name: 'Contact' },
+  { id: 'footer', name: 'Footer' },
+];
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState('dark');
 
-  useSectionTracking(loading ? [] : ['about', 'skills', 'projects', 'contact']);
+  useSectionTracking(loading ? [] : PORTFOLIO_SECTIONS);
 
   useEffect(() => {
     // Simulate loading
     const timer = setTimeout(() => {
       setLoading(false);
-      portfolioLogger.info('portfolio content ready', {
-        event: 'portfolio_content_ready',
+      trackEvent('portfolio_loaded', {
         initial_load_delay_ms: 2000,
       });
     }, 2000);

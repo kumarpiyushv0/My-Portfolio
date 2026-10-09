@@ -3,7 +3,7 @@ import { ASSETS } from '../assets';
 
 const Hero = () => {
     return (
-        <section className="photo">
+        <section id="hero" data-analytics-section="hero" className="photo">
             <img src={ASSETS.profilePhoto} alt="Piyush Kumar" className="profile-photo" />
         </section>
     );

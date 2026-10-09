@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { supabase } from '../supabaseClient';
-import { portfolioLogger, trackEvent } from '../analytics';
+import { trackEvent, trackButtonClick } from '../analytics';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -72,34 +72,48 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact">
+        <section id="contact" data-analytics-section="contact">
             <h2>Contact Me</h2>
-            <form id="contactForm" onSubmit={handleSubmit}>
+            <form id="contactForm" name="contact-form" data-analytics-id="contact-form" onSubmit={handleSubmit}>
                 <input
+                    id="input-contact-name"
                     type="text"
                     name="name"
+                    data-analytics-id="input-contact-name"
                     placeholder="Name"
                     required
                     value={formData.name}
                     onChange={handleChange}
                 />
                 <input
+                    id="input-contact-email"
                     type="email"
                     name="email"
+                    data-analytics-id="input-contact-email"
                     placeholder="Email"
                     required
                     value={formData.email}
                     onChange={handleChange}
                 />
                 <textarea
+                    id="textarea-contact-message"
                     name="message"
+                    data-analytics-id="textarea-contact-message"
                     rows="5"
                     placeholder="Message"
                     required
                     value={formData.message}
                     onChange={handleChange}
                 ></textarea>
-                <button className="btn" type="submit" disabled={loading}>
+                <button
+                    id="btn-contact-submit"
+                    name="contact-submit-button"
+                    data-analytics-id="btn-contact-submit"
+                    className="btn"
+                    type="submit"
+                    disabled={loading}
+                    onClick={() => trackButtonClick('btn-contact-submit', 'Contact Submit Button')}
+                >
                     {loading ? "Sending..." : "Send"}
                 </button>
             </form>

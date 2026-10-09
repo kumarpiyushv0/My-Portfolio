@@ -20,7 +20,7 @@ const skills = [
 
 const Skills = () => {
     return (
-        <div id="skills" className="skills-marquee">
+        <div id="skills" data-analytics-section="skills" className="skills-marquee">
             <h2>Skills</h2><br />
             <div className="marquee">
                 <div className="marquee-content">

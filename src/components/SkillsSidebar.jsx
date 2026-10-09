@@ -1,5 +1,6 @@
 import React from 'react';
 import { ASSETS } from '../assets';
+import { trackButtonClick } from '../analytics';
 
 // Skills with experience ratings (1-5 stars)
 const skillsWithRatings = [
@@ -34,19 +35,32 @@ const StarRating = ({ rating }) => {
 
 const SkillsSidebar = () => {
     return (
-        <aside className="skills-sidebar">
+        <aside id="sidebar-skills" data-analytics-section="skills-sidebar" className="skills-sidebar">
             <div className="sidebar-content">
-                {skillsWithRatings.map((skill, index) => (
-                    <div key={index} className="sidebar-skill-item">
-                        <div className="skill-icon">
-                            <img src={skill.src} alt={skill.alt} title={skill.alt} />
+                {skillsWithRatings.map((skill, index) => {
+                    const skillId = `skill-sidebar-${skill.alt.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+                    return (
+                        <div
+                            key={index}
+                            id={skillId}
+                            name={`skill-sidebar-${skill.alt.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+                            data-analytics-id={skillId}
+                            className="sidebar-skill-item"
+                            onClick={() => trackButtonClick(skillId, `Sidebar Skill: ${skill.alt}`, {
+                                skill_name: skill.alt,
+                                rating: skill.rating,
+                            })}
+                        >
+                            <div className="skill-icon">
+                                <img src={skill.src} alt={skill.alt} title={skill.alt} />
+                            </div>
+                            <div className="skill-details">
+                                <span className="skill-name">{skill.alt}</span>
+                                <StarRating rating={skill.rating} />
+                            </div>
                         </div>
-                        <div className="skill-details">
-                            <span className="skill-name">{skill.alt}</span>
-                            <StarRating rating={skill.rating} />
-                        </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
         </aside>
     );

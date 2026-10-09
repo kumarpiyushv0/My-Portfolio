@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ASSETS } from '../assets';
-import { trackEvent } from '../analytics';
+import { trackEvent, trackButtonClick } from '../analytics';
 
 const projects = [
     {
@@ -71,59 +71,76 @@ const Projects = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const nextProject = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % regularProjects.length);
+        const nextIdx = (currentIndex + 1) % regularProjects.length;
+        trackButtonClick('btn-carousel-next', 'Carousel Next Project', {
+            target_project: regularProjects[nextIdx].title,
+            target_index: nextIdx,
+        });
+        setCurrentIndex(nextIdx);
     };
 
     const prevProject = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + regularProjects.length) % regularProjects.length);
+        const prevIdx = (currentIndex - 1 + regularProjects.length) % regularProjects.length;
+        trackButtonClick('btn-carousel-prev', 'Carousel Previous Project', {
+            target_project: regularProjects[prevIdx].title,
+            target_index: prevIdx,
+        });
+        setCurrentIndex(prevIdx);
     };
 
     return (
-        <section id="projects" className="projects-section">
+        <section id="projects" data-analytics-section="projects" className="projects-section">
             <h2>Projects</h2><br />
 
             <div className="featured-projects">
-                {featuredProjects.map((project, index) => (
-                    <motion.div
-                        className={`project project--featured ${index % 2 !== 0 ? 'reverse' : ''}`}
-                        key={`featured-${index}`}
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6, delay: index * 0.2 }}
-                        onMouseMove={(e) => {
-                            const rect = e.currentTarget.getBoundingClientRect();
-                            const x = e.clientX - rect.left;
-                            const y = e.clientY - rect.top;
-                            e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
-                            e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
-                        }}
-                    >
-                        <div className="spotlight-overlay"></div>
-                        <section className="project_photo">
-                            <a
-                                href={project.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={() => trackEvent('project_link_opened', {
-                                    project_title: project.title,
-                                    source: 'featured_gallery',
-                                })}
-                            >
-                                <img src={project.image} alt={project.title} className="project__photo" />
-                            </a>
-                        </section>
-                        <div className="project__content">
-                            <h3>{project.title}</h3>
-                            <p>{project.description}</p>
-                            <div className="project-tech-icons">
-                                {project.tech.map((icon, i) => (
-                                    <img key={i} src={icon} alt="Tech" />
-                                ))}
+                {featuredProjects.map((project, index) => {
+                    const btnId = `btn-featured-project-${project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+                    return (
+                        <motion.div
+                            className={`project project--featured ${index % 2 !== 0 ? 'reverse' : ''}`}
+                            key={`featured-${index}`}
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.6, delay: index * 0.2 }}
+                            onMouseMove={(e) => {
+                                const rect = e.currentTarget.getBoundingClientRect();
+                                const x = e.clientX - rect.left;
+                                const y = e.clientY - rect.top;
+                                e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+                                e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+                            }}
+                        >
+                            <div className="spotlight-overlay"></div>
+                            <section className="project_photo">
+                                <a
+                                    id={btnId}
+                                    name={`featured-project-${project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+                                    data-analytics-id={btnId}
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => trackButtonClick(btnId, `Featured Project: ${project.title}`, {
+                                        project_title: project.title,
+                                        destination_url: project.link,
+                                        source: 'featured_gallery',
+                                    })}
+                                >
+                                    <img src={project.image} alt={project.title} className="project__photo" />
+                                </a>
+                            </section>
+                            <div className="project__content">
+                                <h3>{project.title}</h3>
+                                <p>{project.description}</p>
+                                <div className="project-tech-icons">
+                                    {project.tech.map((icon, i) => (
+                                        <img key={i} src={icon} alt="Tech" />
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    </motion.div>
-                ))}
+                        </motion.div>
+                    );
+                })}
             </div>
 
             <div className="carousel-3d-container">
@@ -134,18 +151,28 @@ const Projects = () => {
                         else if (index === (currentIndex - 1 + regularProjects.length) % regularProjects.length) position = 'prev';
                         else if (index === (currentIndex + 1) % regularProjects.length) position = 'next';
 
+                        const cardId = `btn-carousel-card-${project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+
                         return (
                             <div
                                 key={index}
+                                id={cardId}
+                                name={`carousel-card-${project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+                                data-analytics-id={cardId}
                                 className={`carousel-card ${position}`}
                                 onClick={() => {
                                     if (index === currentIndex) {
-                                        trackEvent('project_link_opened', {
+                                        trackButtonClick(cardId, `Active Carousel Project: ${project.title}`, {
                                             project_title: project.title,
+                                            destination_url: project.link,
                                             source: 'project_carousel',
                                         });
                                         window.open(project.link, '_blank');
                                     } else {
+                                        trackButtonClick(cardId, `Select Carousel Project: ${project.title}`, {
+                                            project_title: project.title,
+                                            source: 'project_carousel',
+                                        });
                                         setCurrentIndex(index);
                                     }
                                 }}
@@ -159,8 +186,24 @@ const Projects = () => {
                 </div>
 
                 <div className="carousel-controls">
-                    <button className="carousel-btn prev" onClick={prevProject}>&#10094;</button>
-                    <button className="carousel-btn next" onClick={nextProject}>&#10095;</button>
+                    <button
+                        id="btn-carousel-prev"
+                        name="carousel-previous-button"
+                        data-analytics-id="btn-carousel-prev"
+                        className="carousel-btn prev"
+                        onClick={prevProject}
+                    >
+                        &#10094;
+                    </button>
+                    <button
+                        id="btn-carousel-next"
+                        name="carousel-next-button"
+                        data-analytics-id="btn-carousel-next"
+                        className="carousel-btn next"
+                        onClick={nextProject}
+                    >
+                        &#10095;
+                    </button>
                 </div>
             </div>
 
@@ -175,13 +218,25 @@ const Projects = () => {
             </div>
 
             <div className="carousel-indicators">
-                {regularProjects.map((_, index) => (
-                    <span
-                        key={index}
-                        className={`indicator ${index === currentIndex ? 'active' : ''}`}
-                        onClick={() => setCurrentIndex(index)}
-                    ></span>
-                ))}
+                {regularProjects.map((project, index) => {
+                    const dotId = `btn-carousel-dot-${index}`;
+                    return (
+                        <span
+                            key={index}
+                            id={dotId}
+                            name={`carousel-indicator-${index}`}
+                            data-analytics-id={dotId}
+                            className={`indicator ${index === currentIndex ? 'active' : ''}`}
+                            onClick={() => {
+                                trackButtonClick(dotId, `Carousel Indicator: ${project.title}`, {
+                                    target_project: project.title,
+                                    target_index: index,
+                                });
+                                setCurrentIndex(index);
+                            }}
+                        ></span>
+                    );
+                })}
             </div>
         </section>
     );
