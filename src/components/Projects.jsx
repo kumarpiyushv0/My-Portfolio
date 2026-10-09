@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ASSETS } from '../assets';
+import { trackEvent } from '../analytics';
 
 const projects = [
     {
@@ -100,7 +101,15 @@ const Projects = () => {
                     >
                         <div className="spotlight-overlay"></div>
                         <section className="project_photo">
-                            <a href={project.link} target="_blank" rel="noopener noreferrer">
+                            <a
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => trackEvent('project_link_opened', {
+                                    project_title: project.title,
+                                    source: 'featured_gallery',
+                                })}
+                            >
                                 <img src={project.image} alt={project.title} className="project__photo" />
                             </a>
                         </section>
@@ -131,6 +140,10 @@ const Projects = () => {
                                 className={`carousel-card ${position}`}
                                 onClick={() => {
                                     if (index === currentIndex) {
+                                        trackEvent('project_link_opened', {
+                                            project_title: project.title,
+                                            source: 'project_carousel',
+                                        });
                                         window.open(project.link, '_blank');
                                     } else {
                                         setCurrentIndex(index);

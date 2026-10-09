@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackEvent } from '../analytics';
 
 const RESUME_URL = "https://ixereoqdgdptfaooscrq.supabase.co/storage/v1/object/public/resume/My_resume.pdf";
 
@@ -17,6 +18,7 @@ const About = () => {
         target="_blank"
         rel="noopener noreferrer"
         className="resume-btn"
+        onClick={() => trackEvent('resume_download_clicked')}
       >
         View Resume
       </a>

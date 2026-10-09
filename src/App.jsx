@@ -9,16 +9,23 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SkillsSidebar from './components/SkillsSidebar';
 import ThemeToggle from './components/ThemeToggle';
+import { portfolioLogger, useSectionTracking } from './analytics';
 import './index.css';
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState('dark');
 
+  useSectionTracking(loading ? [] : ['about', 'skills', 'projects', 'contact']);
+
   useEffect(() => {
     // Simulate loading
     const timer = setTimeout(() => {
       setLoading(false);
+      portfolioLogger.info('portfolio content ready', {
+        event: 'portfolio_content_ready',
+        initial_load_delay_ms: 2000,
+      });
     }, 2000);
 
     // Mouse move effect
